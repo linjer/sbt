@@ -12,6 +12,7 @@ val commonSettings = Seq[Def.Setting[_]](
 lazy val bippy = project settings (
   commonSettings,
   resolvers += Resolver.file("ivy-local", file(sys.props("user.home")) / ".ivy2" / "local")(Resolver.ivyStylePatterns),
+  publishMavenStyle := false,
   publishTo := Some(Resolver.file("local-repo", localRepo.value))
 )
 
